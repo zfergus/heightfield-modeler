@@ -1,0 +1,45 @@
+3D Vertex Picking
+Zachary Ferguson
+
+Let E be the Eye world coordinates, C be the viewing direction where |C| is the 
+viewing distance, U be the up vector, and theta and phi are the view half 
+angles.
+
+Convert the point selected in Normalized Device Coordinates to world coordinates
+and use it to create a ray equation in 3D space.
+
+Step 1: Compute the horizontal screen vector, H, at the point E.
+
+	a. A = C x U, where A||H and starts at E.
+	b. H = (A*|C|*tan(theta))/(|A|), rescale A to H.
+	
+Step 2: Compute the vertical screen vector, V, at the point E.
+
+	a. B = A x C, where B||V and starts at E.
+	b. V = (B*|C|*tan(phi))/(|B|), rescale B to V.
+	
+Step 3: Compute the midpoint of the screen, M.
+
+	a. M = E + C.
+	
+Step 4: Compute P, the point in world 2D coordinates that the user points at, 
+given the point in Normalized Device Coordinates, (s_x, s_y), where 
+0 <= s_x <= 1 and 0 <= s_y <= 1.
+
+	a. P = M + (2*s_x - 1) * H + (2*s_y - 1) * V.
+	
+Step 5: Compute the ray equation, R.
+	
+	a. R = E + (t*(P - E))/(|P-E|), where t is the independent variable.
+	
+Check for the vertices that the ray passes through, within a radius of r from 
+the vertex.
+	
+Step 6: For each vertex, v, in the mesh, compute the distance from v to the ray, 
+R, computed in step 5. If the distance is less than or equal to r, then select 
+that vertex.
+
+	a. R_01 = R(1) - R(0), where R_01 is the direction vector of the ray.
+	b. d = |(R_01 x (v - R(0)))|, where d is the distance from the point to the
+	   ray and R(0) is the rays origin.
+	c. If d <= r, then select v.

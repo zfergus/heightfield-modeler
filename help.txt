@@ -1,0 +1,64 @@
+  _    _                   _______       _    _            
+ | |  | |                 |__   __|     | |  | |           
+ | |__| |  ___ __      __    | |  ___   | |  | | ___   ___ 
+ |  __  | / _ \\ \ /\ / /    | | / _ \  | |  | |/ __| / _ \
+ | |  | || (_) |\ V  V /     | || (_) | | |__| |\__ \|  __/
+ |_|  |_| \___/  \_/\_/      |_| \___/   \____/ |___/ \___|
+ 
+ 
+	To use this 3D Modeler open the program and a new mesh with randomized 
+heights will be generated. To create a new mesh use the spinner widgets to 
+select the number of rows and cols in the new mesh and the width and depth of 
+the mesh. Click on the "Generate Mesh" button to create the a new mesh with
+the specified settings. You can also change the color of the mesh with the color
+chooser. This will change the color of the current mesh and of any new meshes.
+Note that the wire frame is always drawn as white.
+	To change the viewing mode to wire-frame, solid, or both use the 
+corresponding radio buttons in the "Viewing Mode" group. This will change how 
+the mesh is drawn.
+	Use the following controls to move the camera around the sphere it lies on:
+		Rotate UP:       W
+		Rotate LEFT:     A
+		Rotate DOWN:     S
+		Rotate RIGHT:    D
+		Roll LEFT:       Q
+		Roll RIGHT:      E
+		Increase Radius: Ctrl
+		Decrease Radius: Shift
+Note that you may have to click off of any selected input boxes for these 
+commands to register. Also, you may use the "Camera Align" group to move the 
+camera to predefined positions on a sphere of radius 15.
+	To edit the vertices height values in the mesh select a vertex and use the
+height slider to change the selected vertex's height. To select a vertex you can
+either click on a vertex in the GL window and it will select the nearest vertex 
+within a pre-set radius of 0.5, or you can use the "row" and "col" spinners to 
+select the specific vertex desired. Either method will allow you to select any
+vertex on the mesh and after being selected an orange wire-frame square will 
+appear around the vertex indicating that it is selected.
+	The heights of the current mesh can also be randomized or flatten if 
+desired. To do this use the corresponding buttons and slider to change the 
+random height range. This will not create a new mesh but will instead change the
+current mesh's height values.
+	
+Snow Caps:
+	Use the "Snow Cap Height" slider to edit the height at which the vertices 
+are drawn white. This can be used to simulate a mountain range with the 
+fractalize button modifying the mesh to look more mountainous.
+
+Fractalize:
+	To fractalize the mesh use the "fractalize iterations" slider to change the
+number of iterations the fractalize algorithm runs. Click the "Fractalize Mesh"
+button to run the algorithm the specified number of times.
+
+Smoothing:
+	Similarly, use the "Smooth Iteration" slider and "Smooth Mesh" button to 
+run the smoothing, Catmull-Clark Subdivision, algorithm on the mesh. This will
+smooth out the mesh and create smooth curve-like structures.
+
+Saving/Exporting:
+	Lastly, to save the mesh to a OBJ file click on "File"->"Save". This will 
+bring up a explore window for selecting the file location and name. Make sure to
+add the extension ".obj" to the filename. Once done, click "OK" to save. The 
+mesh will then be saved out to a OBJ file with a MTL file for the color of each 
+face. This file can be imported to many different 3D modelling software 
+including Autodesk's Maya and the open source MeshLab.

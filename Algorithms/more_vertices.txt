@@ -1,0 +1,53 @@
+/* Copies this mesh into a larger mesh and fractalizes it with a */
+/* range of deltaH.                                              */
+Mesh* Mesh::fractalize(float deltaH) const
+{
+	/* Get the first and last vertex to calculate the width and depth. */
+	vec4 begin = this->getVertex(0,0);
+	vec4 end = this->getVertex(this->getRows() - 1, this->getCols() - 1);
+	/* Create a new larger mesh. */
+	Mesh* newMesh = new Mesh((this->getRows()*2)-2, (this->getCols()*2)-2,
+		end[0] - begin[0], end[2] - begin[2], this->color, 
+		this->snowCapHeight);
+
+	/* Copy over the original values of the Mesh to the new mesh's even */
+	/* indecies. Run time complexity of O((r*c)/4).                     */
+	for (unsigned int newRow = 0, originalRow = 0; newRow < newMesh->getRows();
+		 newRow+=2, originalRow++)
+	{
+		for (unsigned int newCol = 0, originalCol = 0; newCol < newMesh->
+			 getCols(); newCol+=2, originalCol++)
+		{
+			newMesh->setVertex(newRow, newCol, 
+				this->getVertex(originalRow, originalCol));
+		}
+	}
+
+	/* Create new vectors that are averages of the original mesh's vectors. */
+	/* Run time complexity of O((r*c)/4).                                   */
+	for (unsigned int r = 0; r < newMesh->getRows(); r+=2)
+	{
+		for (unsigned int c = 1; c < newMesh->getCols(); c+=2)
+		{
+			vec4 prev = newMesh->getVertex(r, c - 1);
+			vec4 next = newMesh->getVertex(r, c + 1);
+			newMesh->setVertex(r, c, vec4((prev[0]+next[0])/2.0f,
+				(prev[1]+next[1])/2.0f, (prev[2]+next[2])/2.0f, 1.0));
+		}
+	}
+
+	/* Create new rows that are average of the above and below column */ 
+	/* values. Run time complexity of O((r*c)/2).                     */
+	for (unsigned int r = 1; r < newMesh->getRows(); r+=2)
+	{
+		for (unsigned int c = 0; c < newMesh->getCols(); c++)
+		{
+			vec4 prev = newMesh->getVertex(r-1, c);
+			vec4 next = newMesh->getVertex(r+1, c);
+			newMesh->setVertex(r, c, vec4((prev[0]+next[0])/2.0f,
+				(prev[1]+next[1])/2.0f, (prev[2]+next[2])/2.0f, 1.0));
+		}
+	}
+
+	return newMesh;
+}

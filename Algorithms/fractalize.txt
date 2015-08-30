@@ -1,0 +1,14 @@
+Step 1: Sub-divide the mesh to create new vertices between the original ones.
+
+	a.Use the original mesh to create a new mesh.
+	b.Copy over the values of the original mesh.
+	c.Add new rows and cols between the original rows and cols while copying.
+
+Step 2: Change the new vertices' height value to a value specified by a random 
+function. The range of the random function is half the previous range that the 
+fractalize function was called.
+
+	a. Iterate over the new vertices
+	b. Set their height to be the result of the random function.
+
+Step 3: Set the mesh to be drawn to the newly fractalized mesh.

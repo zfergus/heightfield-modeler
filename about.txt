@@ -1,0 +1,18 @@
+  __  __           _     __  __           _      _           
+ |  \/  |         | |   |  \/  |         | |    | |          
+ | \  / | ___  ___| |__ | \  / | ___   __| | ___| | ___ _ __ 
+ | |\/| |/ _ \/ __| '_ \| |\/| |/ _ \ / _` |/ _ \ |/ _ \ '__|
+ | |  | |  __/\__ \ | | | |  | | (_) | (_| |  __/ |  __/ |   
+ |_|  |_|\___||___/_| |_|_|  |_|\___/ \__,_|\___|_|\___|_|   
+
+MeshModeler crated by Zachary Ferguson
+© 2015 Zachary Ferguson
+
+3D Modeler for creating and editing meshes. Contains the functionality to change
+heights, fractalize, and smooth out meshes. Can also be used to create meshes 
+and export as an OBJ file for editing in 3D modelling software like Autodesk's 
+Maya.
+
+Any bugs or suggestions can be emailed to zfergus2@gmu.edu.
+
+Thank you for using MeshModeler.

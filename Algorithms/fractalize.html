@@ -1,0 +1,41 @@
+<html>
+<body>
+<br>
+<center>
+<b>Fractalized Mesh Algorithm</b><br>
+Zachary Ferguson
+</center>
+<br><hr><br>
+<strong>Step 1:</strong> Sub-divide the mesh to create new vertices between the 
+original ones.
+<ol>
+	<li>
+		Use the original mesh to create a new mesh.
+	</li>
+	<li>
+		Copy over the values of the original mesh.
+	</li>
+	<li>
+		Add new rows and cols between the original rows and cols while copying.
+		<br>
+		These new vertices' heights should be the average of the adjacent 
+		original vertices' heights.
+	</li>
+</ol>
+
+<strong>Step 2:</strong> Change the new vertices' height value to a value 
+specified by a random function. <br>
+The range of the random function is half the previous range that the fractalize
+function was called.
+<ol>
+	<li>
+		Iterate over the new vertices
+	</li>
+	<li>
+		Change their heights by the result of the random function.
+	</li>
+</ol>
+
+<strong>Step 3:</strong> Set the mesh to be drawn to the newly fractalized mesh.
+</body>
+</html>
