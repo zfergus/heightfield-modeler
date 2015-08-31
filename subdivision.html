@@ -1,0 +1,55 @@
+<html>
+<body>
+<br>
+<center>
+<b>Catmull-Clark Subdivision Algorithm</b><br>
+Zachary Ferguson
+</center>
+<br><hr><br>
+<strong>Step 1:</strong> For each face in the mesh, create a new vertex at the 
+center of the face.
+<ol>
+	<li>
+		Average the face vertices' x, y, and z values.
+	</li>
+	<li>
+		Create a new vertex with these x, y, and z (center vertex).
+	</li>
+</ol>
+
+<strong>Step 2:</strong> For each edge in the mesh, create a new edge midpoint 
+vertex that is the average of the adjacent edge vertices and the adjacent face 
+vertices.
+<ol>
+	<li>
+		Sum the two adjacent edge vertices and the two adjacent face vertices 
+		created in "Step 1".
+	</li>
+	<li>
+		Divide this sum by four to yield the new edge vertex.
+	</li>
+</ol>
+<strong>Step 3:</strong> Update the original vertices to be an weighted average 
+of the surrounding face centres, new edge midpoints, and vertex.
+<ol>
+	<li>
+		Sum all of the face vertices for the faces that the vertex is part of, 
+		then divide the sum by the number of edges connected to the vertex.
+	</li>
+	<li>
+		Sum all of the midpoints of the edges that the vertex is part of, then 
+		multiply the sum by two and divide by the number of edges connected to the
+		vertex.
+	</li>
+	<li>
+		Multiply the vertex that is being updated by the number of edges 
+		connected to the vertex minus three and then divide by the number of 
+		edges connected to the vertex.
+	</li>
+	<li>
+		Update the vertex being updated to be the sum of the results from 1, 2, 
+		and 3.
+	</li>
+</ol>
+</body>
+</html>
