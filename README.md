@@ -1,5 +1,9 @@
 # 3D Mesh Modeler
 
+<img src = "mesh_modeler.png" title = "Mesh Modelers" width = "100%">
+
+**Software for creating and editing 3D models. Includes the ability to fractalize and smooth meshes.**
+
 MeshModeler is a 3D Modeler for creating and editing meshes. As well as general
 editing of vertices heights and colors, MeshModeler includes the ability to 
 both fractalize and smooth a mesh. Created meshes can then be exported as an 
