@@ -10,6 +10,12 @@ includes the ability to both fractalize and smooth (Catmull-Clark subdivision)
 a heightfield. Created heightfields can be exported as an OBJ and MTL files for further 
 editing in other 3D modeling software.
 
+Example heightfields created using Heightfield Modeler: https://skfb.ly/6ASnQ
+
+Video of using Heightfield Modeler: https://www.youtube.com/watch?v=yKFQtBQylT8
+
+## Building Heightfield Modeler
+
 Requires the FLTK libraries and the system path variables to compile 
 (look in project setting for the system variable names).
 
