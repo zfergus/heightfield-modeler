@@ -1,6 +1,8 @@
 # Heightfield Modeler
 
-<img src = "mesh_modeler.png" title = "Mesh Modelers" width = "100%">
+<p align="center">
+<img src = "heightfield-modeler.png" title="Heightfield Modeler" width = "75%">
+</p>
 
 **Create 3D heightfields with fractalization and Catmull-Clark subdivision.**
 
